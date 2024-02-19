@@ -13,6 +13,7 @@ TagManager:
   - Vine
   - Explode
   - Energy
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -20,10 +21,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Map
+  - Item
   - 
   - 
   - 
@@ -50,12 +51,48 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BG
-    uniqueID: 421713709
+  - name: BG1
+    uniqueID: 1449013227
+    locked: 0
+  - name: BG2
+    uniqueID: 3071969513
+    locked: 0
+  - name: BG3
+    uniqueID: 1615818713
+    locked: 0
+  - name: BG4
+    uniqueID: 2952338153
+    locked: 0
+  - name: BG5
+    uniqueID: 3007543627
+    locked: 0
+  - name: BG6
+    uniqueID: 4024620117
+    locked: 0
+  - name: Sand
+    uniqueID: 3892216901
     locked: 0
   - name: MG
-    uniqueID: 4094245189
+    uniqueID: 3326947045
+    locked: 0
+  - name: MG2
+    uniqueID: 765563341
+    locked: 0
+  - name: Player
+    uniqueID: 1721477971
+    locked: 0
+  - name: Glass
+    uniqueID: 555891753
+    locked: 0
+  - name: Water
+    uniqueID: 299928343
     locked: 0
   - name: FG
-    uniqueID: 1180757383
+    uniqueID: 3760366523
+    locked: 0
+  - name: FG2
+    uniqueID: 4159149735
+    locked: 0
+  - name: Indicator
+    uniqueID: 1409819585
     locked: 0
