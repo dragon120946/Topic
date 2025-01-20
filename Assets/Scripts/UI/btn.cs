@@ -17,5 +17,6 @@ public class btn : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         btnTouchVoice.Play();
+        gameObject.GetComponent<Button>().Select();
     }
 }

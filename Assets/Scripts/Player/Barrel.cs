@@ -23,16 +23,16 @@ public class Barrel : MonoBehaviour
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0,0,lookAngle-90f);
-        /*
+
         if (Input.GetMouseButton(0) && Time.time > nextRound && GameDb.isWater)
         {
             //Debug.Log("On fire!");
             nextRound = Time.time + fireRate;
             Fire();
         }
-        */
+   
     }
-
+/*
     public void Attack(InputAction.CallbackContext context)
     {
         if (context.performed && Time.time > nextRound && GameDb.isWater)
@@ -41,6 +41,7 @@ public class Barrel : MonoBehaviour
             Fire();
         }
     }
+    */
     void Fire()
     {
         GameDb.hp -= 5;

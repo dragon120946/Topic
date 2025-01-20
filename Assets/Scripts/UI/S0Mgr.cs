@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class S0Mgr : MonoBehaviour 
 {
@@ -18,6 +19,7 @@ public class S0Mgr : MonoBehaviour
     public Button btnCloseLoad;     //關閉載入視窗按鈕
     public Button btnCloseSetting;  //關閉設定視窗按鈕
     public Button btnCloseMember;  //關閉工作人員視窗按鈕
+    public Image imgScreen;         //截圖圖片
 
     public Slider slidMusic;        //音樂大小滑桿
     public Slider slidSound;        //音效大小滑桿
@@ -46,12 +48,22 @@ public class S0Mgr : MonoBehaviour
         btnCloseMember.onClick.AddListener(OnBtnCloseClick);
         btnMember.onClick.AddListener(OnBtnMemberClick);
         slidSound.onValueChanged.AddListener(OnslidSoundValueChange);
+        EventSystem.current.SetSelectedGameObject(btnStart.gameObject);
     }
     void Update()
     {
+        Time.timeScale = 1;
         GameDb.musicVolum = music.volume = slidMusic.value;
         GameDb.soundVolum = sound.volume = btnClickVoice.volume = slidSound.value / 10f;
-        
+        imgScreen.sprite = Resources.Load<Sprite>("ScreenShots/Screenshot");
+        if(GameDb.isSave)
+        {
+            imgScreen.gameObject.SetActive(true);
+        }
+        else
+        {
+            imgScreen.gameObject.SetActive(false);
+        }
     }
     void OnslidSoundValueChange(float value)
     {
@@ -64,26 +76,35 @@ public class S0Mgr : MonoBehaviour
     void OnBtnStartClick()      //點擊開始按鈕
     {
         btnClickVoice.Play();
-        SceneManager.LoadScene("Loading");
+        if(GameDb.isSave)
+        {
+            GameDb.isSave = false;
+        }
+        SceneManager.LoadScene("Video");
     }
     void OnBtnLoadClick()       //點擊載入按鈕
     {
         btnClickVoice.Play();
         laodView.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(btnCloseLoad.gameObject);
     }
     void OnBtnSaveClick()     //點擊存檔按鈕
     {
-        PlayerPrefs.GetInt("HP");
-        PlayerPrefs.GetInt("Energy");
-        PlayerPrefs.GetFloat("PlayerPosX");
-        PlayerPrefs.GetFloat("PlayerPosY");
-        GameDb.level =  PlayerPrefs.GetInt("Level");
+        if(GameDb.isSave)
+        {
+            GameDb.level =  PlayerPrefs.GetInt("Level");
+        }
+        else
+        {
+            return;
+        }
         SceneManager.LoadScene("Loading");
     }
     void OnBtnSettingClick()    //點擊設定按鈕
     {
         btnClickVoice.Play();
         settingView.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(btnCloseSetting.gameObject);
     }
     void OnBtnExitClick()       //點擊離開按鈕
     {
@@ -94,6 +115,7 @@ public class S0Mgr : MonoBehaviour
     {
         btnClickVoice.Play();
         memberView.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(btnCloseMember.gameObject);
     }
     void OnBtnCloseClick()      //點擊關閉按鈕
     {
@@ -101,5 +123,6 @@ public class S0Mgr : MonoBehaviour
         laodView.SetActive(false);
         settingView.SetActive(false);
         memberView.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(btnStart.gameObject);
     }
 }

@@ -21,11 +21,14 @@ public class fungus : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-       // Debug.Log("c");
         if (other.gameObject.CompareTag("Player"))
         {
-           // Debug.Log("a");
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(push  *Vector2.up);
+            
+            if (GameDb.isWater)
+            {
+                other.gameObject.GetComponent<Animator>().SetTrigger("Jump");
+            }
             GameDb.isGround = false;
         }
         audio.Play();

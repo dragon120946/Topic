@@ -5,11 +5,10 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
 
-    public AudioSource[] 音效;
+    public AudioSource[] SE;
 
-    public AudioSource 背景音樂;
-    [Range(0,1)]
-    public float 音效音量;
+    public AudioSource[] BGM;
+
     public Slider slidSound;
     public Slider slidMusic;
     // Start is called before the first frame update
@@ -21,10 +20,18 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (var VARIABLE in 音效)
+        foreach (var VARIABLE in SE)
         {
             VARIABLE.volume = slidSound.value / 10f;
         }
-        背景音樂.volume = slidMusic.value;
+
+        if (GameDb.level == 2)
+        {
+            return;
+        }
+        foreach (var VARIABLE in BGM)
+        {
+            VARIABLE.volume = slidMusic.value;
+        }
     }
 }

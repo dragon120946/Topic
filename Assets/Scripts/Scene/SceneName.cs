@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SceneName : MonoBehaviour
 {
     public Text txtSceneName;
+    public S1Mgr s1;
     void Start()
     {
         txtSceneName.color = new Color(1, 1, 0, 1);
@@ -33,6 +34,7 @@ public class SceneName : MonoBehaviour
         if (gameObject.name == "GameObject (4)" && other.gameObject.CompareTag("Player"))
         {
             txtSceneName.text = "沙枯之地";
+            s1.sandBug = true;
         }
         if (gameObject.name == "GameObject (5)" && other.gameObject.CompareTag("Player"))
         {

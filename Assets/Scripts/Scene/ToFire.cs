@@ -8,10 +8,11 @@ public class ToFire : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && GameDb.isGetKey)
+        if (other.gameObject.CompareTag("Player") && GameDb.key == 1)
         {
             SceneManager.LoadScene("Loading");
             GameDb.level++;
+            GameDb.isSave = false;
         }
     }
 }

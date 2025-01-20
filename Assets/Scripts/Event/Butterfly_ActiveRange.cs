@@ -5,6 +5,7 @@ using UnityEngine;
 public class Butterfly_ActiveRange : MonoBehaviour
 {
     public Butterfly butterfly;
+    public S1Mgr s1;
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -17,6 +18,7 @@ public class Butterfly_ActiveRange : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             butterfly.canActive = false;
+            s1.butterfly = true;
         }
     }
 }

@@ -20,6 +20,7 @@ public class SandBug : EnemyBehavior
  
     void Update()
     {
+        Enemy_Update();
         // 判斷
         if (up.localPosition.y < this.transform.localPosition.y)
         {

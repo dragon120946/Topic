@@ -53,7 +53,7 @@ public class Loading : MonoBehaviour
         while (!async.isDone)
         {
             slidLoading.value = async.progress;
-            txtProcess.text = Mathf.Floor(slidLoading.value) * 100 + " %";
+            txtProcess.text = Mathf.Floor(slidLoading.value * 100)  + " %";
             //Debug.Log("000");
             if (async.progress >=0.88f)
             {
@@ -64,7 +64,7 @@ public class Loading : MonoBehaviour
         //Debug.Log("強制100");
         loadProgress = 100;
         slidLoading.value = 100;
-        txtProcess.text = Mathf.Floor(slidLoading.value) * 100 + " %";
+        txtProcess.text = "99 %";
         async.allowSceneActivation = true;  
     }
 }

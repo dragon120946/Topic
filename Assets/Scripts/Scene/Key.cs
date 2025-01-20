@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            GameDb.isGetKey = true;
+            GameDb.key++;
             Destroy(gameObject);
         }
     }

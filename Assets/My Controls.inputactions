@@ -2,7 +2,7 @@
     "name": "My Controls",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Player",
             "id": "97f4e99f-eeb5-493d-8a56-8190c68cf013",
             "actions": [
                 {
@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "RotateCenter",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "19bc92b5-6244-4507-a3d9-a2a9a2ee6ad5",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -42,18 +42,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TypeChange",
+                    "name": "TouchSeed",
                     "type": "Button",
-                    "id": "001c3fee-4069-4428-bdca-cbc88fcd5fb2",
+                    "id": "fb7dc23b-5898-4816-8b03-97320897bf35",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.1)",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Select",
+                    "name": "TypeChange",
                     "type": "Button",
-                    "id": "f4b2053b-ae84-4af1-8f03-799009b11f34",
+                    "id": "4cf312ad-f69d-4d60-b3ef-b3491a549fdf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -62,16 +62,34 @@
                 {
                     "name": "Setting",
                     "type": "Button",
-                    "id": "cc8794d4-a6dc-4804-a5ea-02647b9ad04c",
+                    "id": "551cb77f-747f-4d93-b74d-2f5693007781",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TouchSeed",
+                    "name": "DialogeSkip",
                     "type": "Button",
-                    "id": "fb7dc23b-5898-4816-8b03-97320897bf35",
+                    "id": "52e2c39a-4e35-495e-a662-78ba6e12e1fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VideoSkip",
+                    "type": "Button",
+                    "id": "242c84bb-a632-4eec-a196-5f8cbfc3cd55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TutorSkip",
+                    "type": "Button",
+                    "id": "536c5ac0-70af-4700-be4b-37c7757eb125",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -191,67 +209,23 @@
                 },
                 {
                     "name": "",
-                    "id": "004866b7-9131-4328-90bd-d08c99b02712",
-                    "path": "<Mouse>/leftButton",
+                    "id": "c2e17b9b-5f57-47a5-a46f-52b48785dac4",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Select",
+                    "action": "RotateCenter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "dd19af10-74be-4483-aa87-a05771ca5858",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "86a6b5c9-0f4e-4b98-952e-6ad4e175793c",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Select",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "add0f9cb-7723-4126-bec9-2a24370a32c8",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TypeChange",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2da9be43-fe9f-4842-929c-2223ee985632",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TypeChange",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c7128be-bdce-42c6-b531-4c2cadba5699",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Setting",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ad3a115b-1262-47ff-8303-3b570eb72957",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Setting",
+                    "action": "RotateCenter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -279,23 +253,111 @@
                 },
                 {
                     "name": "",
-                    "id": "c2e17b9b-5f57-47a5-a46f-52b48785dac4",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "b875aabb-437e-4b55-804a-257fa435f74e",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCenter",
+                    "action": "TypeChange",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a0f6c389-f081-4bd5-b33b-4dbd3db6a148",
-                    "path": "<Mouse>/delta",
+                    "id": "e536b74c-acf1-4922-bf85-0f773b0dbad4",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCenter",
+                    "action": "TypeChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a094c899-62de-400b-b060-3307d044f533",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Setting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddecbd2d-9810-452f-9bf0-2e8fe5efe652",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Setting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28c58334-8127-4c7e-89fc-b89d73df257e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DialogeSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0210eb90-bf23-43f7-a90e-9b8dcc4cd92a",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DialogeSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92e626ba-653a-4534-bb59-4432e62813a3",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VideoSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d116797-5e19-498a-9d3b-67d56f924219",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VideoSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff65a12a-18c4-445a-8bcd-b277c6736d2c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TutorSkip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2643ba1-1343-42dc-b993-8b6d6f54fc57",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TutorSkip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

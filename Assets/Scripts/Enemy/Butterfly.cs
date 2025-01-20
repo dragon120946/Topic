@@ -6,8 +6,6 @@ using UnityEngine;
 public class Butterfly : EnemyBehavior
 {
     public float speed;
-    public float amp;   //震幅
-    public float fre;   //頻率
     public GameObject activeRange;
     public Transform originPoint;
     public GameObject player;
@@ -21,6 +19,7 @@ public class Butterfly : EnemyBehavior
 
     void Update()
     {
+        Enemy_Update();
         //面向玩家
         if (player.transform.position.x > this.gameObject.transform.position.x)
         {
@@ -38,11 +37,6 @@ public class Butterfly : EnemyBehavior
         else
         {
             transform.position = Vector3.Lerp(transform.position, originPoint.transform.position, speed * Time.deltaTime);
-        }
-
-        if(hp <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }

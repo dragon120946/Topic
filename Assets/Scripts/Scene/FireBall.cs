@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,17 +14,17 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * 4.5f * Time.deltaTime;
+        transform.position += transform.right * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !GameDb.isIce)
         {
             collision.gameObject.GetComponent<PlayerCtrl>().Damage(30);
             Destroy(gameObject);
         }
-        if(collision.gameObject)
+        if (collision.gameObject)
         {
             Destroy(gameObject);
         }

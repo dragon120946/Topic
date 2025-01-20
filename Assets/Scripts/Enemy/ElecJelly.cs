@@ -22,6 +22,7 @@ public class ElecJelly : EnemyBehavior
 
     void Update()
     {
+        Enemy_Update();
         // §PÂ_
         if (up.localPosition.y < this.transform.localPosition.y)
         {
